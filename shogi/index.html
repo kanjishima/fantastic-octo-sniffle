@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="height=405px"/>
+        <title>shogi</title>
+        <script src="jsSYS/jquery-3.1.1.min.js"></script>
+        <script src="jsSYS/jquery-ui.min.js"></script>
+        <script src="jsSYS/TweenMax.js"></script>
+        <script src="jsSYS/TimelineMax.js"></script>
+        <script src="jsSYS/system.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
+        <link type="text/css" href="css/jquery-ui.css" rel="stylesheet">
+    </head>
+    <body>
+        
+        <!-- AREA_ZONEs -->
+                <!-- AREA_ZONEs -->
+                        <!-- AREA_ZONEs -->
+                                <!-- AREA_ZONEs -->
+    <span id="main">
+        <div class="personalArea" id="PA_PL1">PA_PL1</div>
+        <div class="playerTokensHold" id="PTH_PL1"></div>
+        <div class="mainBorad" id="mainBoard">
+        <span class="square" id="9ichi"></span>
+        <span class="square" id="8ichi"></span> 
+        <span class="square" id="7ichi"></span> 
+        <span class="square" id="6ichi"></span> 
+        <span class="square" id="5ichi"></span> 
+        <span class="square" id="4ichi"></span> 
+        <span class="square" id="3ichi"></span> 
+        <span class="square" id="2ichi"></span> 
+        <span class="square" id="1ichi"></span> 
+        <span class="square" id="9ni"></span> 
+        <span class="square" id="8ni"></span>
+        <span class="square" id="7ni"></span> 
+        <span class="square" id="6ni"></span>
+        <span class="square" id="5ni"></span> 
+        <span class="square" id="4ni"></span>
+        <span class="square" id="3ni"></span> 
+        <span class="square" id="2ni"></span>
+        <span class="square" id="1ni"></span>
+        <span class="square" id="9san"></span>
+        <span class="square" id="8san"></span> 
+        <span class="square" id="7san"></span> 
+        <span class="square" id="6san"></span> 
+        <span class="square" id="5san"></span> 
+        <span class="square" id="4san"></span> 
+        <span class="square" id="3san"></span> 
+        <span class="square" id="2san"></span> 
+        <span class="square" id="1san"></span> 
+        <span class="square" id="9yon"></span> 
+        <span class="square" id="8yon"></span>
+        <span class="square" id="7yon"></span> 
+        <span class="square" id="6yon"></span>
+        <span class="square" id="5yon"></span> 
+        <span class="square" id="4yon"></span>
+        <span class="square" id="3yon"></span> 
+        <span class="square" id="2yon"></span>
+        <span class="square" id="1yon"></span>
+        <span class="square" id="9go"></span>
+        <span class="square" id="8go"></span> 
+        <span class="square" id="7go"></span> 
+        <span class="square" id="6go"></span> 
+        <span class="square" id="5go"></span> 
+        <span class="square" id="4go"></span> 
+        <span class="square" id="3go"></span> 
+        <span class="square" id="2go"></span> 
+        <span class="square" id="1go"></span> 
+        <span class="square" id="9roku"></span> 
+        <span class="square" id="8roku"></span>
+        <span class="square" id="7roku"></span> 
+        <span class="square" id="6roku"></span>
+        <span class="square" id="5roku"></span> 
+        <span class="square" id="4roku"></span>
+        <span class="square" id="3roku"></span> 
+        <span class="square" id="2roku"></span>
+        <span class="square" id="1roku"></span>
+        <span class="square" id="9nana"></span>
+        <span class="square" id="8nana"></span> 
+        <span class="square" id="7nana"></span> 
+        <span class="square" id="6nana"></span> 
+        <span class="square" id="5nana"></span> 
+        <span class="square" id="4nana"></span> 
+        <span class="square" id="3nana"></span> 
+        <span class="square" id="2nana"></span> 
+        <span class="square" id="1nana"></span> 
+        <span class="square" id="9hachi"></span> 
+        <span class="square" id="8hachi"></span>
+        <span class="square" id="7hachi"></span> 
+        <span class="square" id="6hachi"></span>
+        <span class="square" id="5hachi"></span> 
+        <span class="square" id="4hachi"></span>
+        <span class="square" id="3hachi"></span> 
+        <span class="square" id="2hachi"></span>
+        <span class="square" id="1hachi"></span>
+        <span class="square" id="9kyuu"></span>
+        <span class="square" id="8kyuu"></span> 
+        <span class="square" id="7kyuu"></span> 
+        <span class="square" id="6kyuu"></span> 
+        <span class="square" id="5kyuu"></span> 
+        <span class="square" id="4kyuu"></span> 
+        <span class="square" id="3kyuu"></span> 
+        <span class="square" id="2kyuu"></span> 
+        <span class="square" id="1kyuu"></span> 
+        </div>
+        <div class="personalArea" id="PA_PL2">PA_PL2</div>
+        <div class="playerTokensHold" id="PTH_PL2"></div>
+        <div class="outherNote">Sound Effect from　魔王魂</div>
+        <div id="systemMessage"></div>
+    </span>
+       
+        
+        <!-- ELEMENT_ZONEs -->
+                <!-- ELEMENT_ZONEs -->
+                        <!-- ELEMENT_ZONEs -->
+                                <!-- ELEMENT_ZONEs -->
+        <span class="token ou" id="OU"></span>
+        <span class="token gyoku" id="GYOKU"></span>
+        <span class="token kin" id="KIN1"></span>
+        <span class="token kin" id="KIN2"></span>
+        <span class="token kin" id="KIN3"></span>
+        <span class="token kin" id="KIN4"></span>
+        <span class="token gin" id="GIN1"></span>
+        <span class="token gin" id="GIN2"></span>
+        <span class="token gin" id="GIN3"></span>
+        <span class="token gin" id="GIN4"></span>
+        <span class="token kei" id="KEI1"></span>
+        <span class="token kei" id="KEI2"></span>
+        <span class="token kei" id="KEI3"></span>
+        <span class="token kei" id="KEI4"></span>
+        <span class="token kyo" id="KYO1"></span>
+        <span class="token kyo" id="KYO2"></span>
+        <span class="token kyo" id="KYO3"></span>
+        <span class="token kyo" id="KYO4"></span>
+        <span class="token kaku" id="KAKU1"></span>
+        <span class="token kaku" id="KAKU2"></span>
+        <span class="token hi" id="HI1"></span>
+        <span class="token hi" id="HI2"></span>
+        <span class="token fu" id="FU1"></span>
+        <span class="token fu" id="FU2"></span>
+        <span class="token fu" id="FU3"></span>
+        <span class="token fu" id="FU4"></span>
+        <span class="token fu" id="FU5"></span>
+        <span class="token fu" id="FU6"></span>
+        <span class="token fu" id="FU7"></span>
+        <span class="token fu" id="FU8"></span>
+        <span class="token fu" id="FU9"></span>
+        <span class="token fu" id="FU10"></span>
+        <span class="token fu" id="FU11"></span>
+        <span class="token fu" id="FU12"></span>
+        <span class="token fu" id="FU13"></span>
+        <span class="token fu" id="FU14"></span>
+        <span class="token fu" id="FU15"></span>
+        <span class="token fu" id="FU16"></span>
+        <span class="token fu" id="FU17"></span>
+        <span class="token fu" id="FU18"></span>
+      
+                        
+        
+        <!-- SCRIPTs -->
+                <!-- SCRIPTs -->
+                        <!-- SCRIPTs -->
+                                <!-- SCRIPTs -->
+        <script src="js/config.js"></script>
+        <script src="js/GAMESTATE.js"></script>
+        <script src="js/minuteFunctions.js"></script>        
+        <script src="jsSYS/KICKER.js"></script>
+    
+    </body>
+</html>
